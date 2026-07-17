@@ -1,7 +1,7 @@
 # Project Gearbound
 
 **Type:** personal
-**Status:** active (early concept)
+**Status:** active (scoped, prototype not yet started)
 **Last updated:** 2026-07-16
 **Repo:** TBD
 **Local path:** TBD
@@ -17,13 +17,21 @@
 ## Agreements / important facts
 - Reference points so far: Realm of the Mad God (bullet-hell, permadeath, retro pixel art, class-based) and Albion Online (class-free, gear-defines-role, economy-heavy).
 - Eduardo is explicitly not interested in class-locked progression.
+- **Permadeath: confirmed yes.**
+- **Gear system:** gear determines skills and stat bonuses (not raw combat mechanics), giving players build freedom without changing the bullet-hell feel. Plans to add an Albion-style gear mastery tree for long-term progression.
+- **Progression persistence:** mastery-tree progress is character-bound (wiped on permadeath, full RotMG-style stakes). Achievements and cosmetics are account-bound (survive death, purely for long-term player retention/pride, no power).
+- **Two-phase plan:** ship a small prototype first to prove the concept and playtest with friends, then a follow-on "1.0" release with fuller MMO scope.
+- **Prototype scope (phase 1):**
+  - Character creation
+  - Small mastery tree (no gear crafting — gear is drop-only, from enemies and dungeon chests)
+  - A few basic achievements (account-bound)
+  - One world with a handful of enemies at varying difficulty
+  - One dungeon
+  - Basic multiplayer — a few friends on the same shared instance (no full MMO server infra/matchmaking/accounts yet), specifically to playtest whether the game is fun with others before investing in full MMO infrastructure
 
 ## Open questions / next steps
-- Permadeath or not?
-- How does gear-defined role work in a bullet-hell combat context (Albion's gear system is built around slower tab-target combat)?
-- Single-player/co-op scope vs. true persistent MMO (MMO server infra is a much bigger undertaking than a solo dev project usually takes on)?
 - Real project name/title.
-- Scope: is this a "small playable prototype" goal or a genuine long-term MMO build?
+- Phase 2 ("1.0") scope: what full MMO infrastructure/features get added after the prototype proves out?
 
 ## Notes
 - "Gearbound" is a placeholder name, not a final title.
