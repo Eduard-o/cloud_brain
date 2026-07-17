@@ -24,7 +24,7 @@
 - **Combat controls:** twin-stick style (WASD movement + mouse aim), independent of facing/movement direction.
 - **Dodge/evasion:** no dedicated dash/dodge mechanic — pure movement/positioning (RotMG-style), consistent with permadeath stakes.
 - **Enemy design:** mutated creatures (radiation/mutation-twisted), fitting the post-apoc theme.
-- **Difficulty structure:** zone-based tiers in the open world, with randomly appearing event bosses in mid/high-tier zones. Dungeons are tiered rather than difficulty-ramping internally — e.g. the same dungeon layout/concept exists as a Tier 1 and Tier 2 version, differing in size, difficulty, and drop chances for higher-tier gear (same pattern RotMG uses for its dungeon portals).
+- **Difficulty structure:** zone-based tiers in the open world, with randomly appearing event bosses in mid/high-tier zones. Dungeons are tiered (Tier 1, Tier 2, etc.) rather than difficulty-ramping room-by-room — each tier is **procedurally generated** (rule-based, not a fixed layout), with higher tiers producing more rooms, harder enemies, and better gear drop chances. Traps are a planned future addition to dungeon generation, not in the initial prototype scope.
 - **Progression persistence:** mastery-tree progress is character-bound (wiped on permadeath, full RotMG-style stakes). Achievements and cosmetics are account-bound (survive death, purely for long-term player retention/pride, no power).
 - **Two-phase plan:** ship a small prototype first to prove the concept and playtest with friends, then a follow-on "1.0" release with fuller MMO scope.
 - **Prototype scope (phase 1):**
