@@ -27,6 +27,8 @@
 - **Dodge/evasion:** no dedicated dash/dodge mechanic — pure movement/positioning (RotMG-style), consistent with permadeath stakes.
 - **Enemy design:** mutated creatures (radiation/mutation-twisted), fitting the post-apoc theme.
 - **Difficulty structure:** zone-based tiers in the open world, with randomly appearing event bosses in mid/high-tier zones. Dungeons are tiered (Tier 1, Tier 2, etc.) rather than difficulty-ramping room-by-room — each tier is **procedurally generated** (rule-based, not a fixed layout), with higher tiers producing more rooms, harder enemies, and better gear drop chances. Traps are a planned future addition to dungeon generation, not in the initial prototype scope.
+- **World structure:** Albion-style hub cities. Difficulty expands outward from cities, with a central high-level city gated behind having to cross the highest-difficulty zone to reach it.
+- **Death/respawn flow:** on permadeath, the corpse is visible to other nearby players but not lootable (for now). The player is sent to a character selection screen, where they can create a new character or pick an existing one from an available character slot — implies accounts support multiple character slots.
 - **Progression persistence:** mastery-tree progress is character-bound (wiped on permadeath, full RotMG-style stakes). Achievements and cosmetics are account-bound (survive death, purely for long-term player retention/pride, no power).
 - **Two-phase plan:** ship a small prototype first to prove the concept and playtest with friends, then a follow-on "1.0" release with fuller MMO scope.
 - **Prototype scope (phase 1):**
