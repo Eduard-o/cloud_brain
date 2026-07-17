@@ -30,6 +30,7 @@
 - **World structure:** Albion-style hub cities. Difficulty expands outward from cities, with a central high-level city gated behind having to cross the highest-difficulty zone to reach it.
 - **Cities are safe zones** (Albion-style) — no combat/PvP allowed in cities.
 - **No player trading system in the prototype.** Players can informally trade by dropping items on the ground for others to pick up — no dedicated trade UI/market/auction house yet.
+- **PvP: friendly-fire safe (for now).** Outside cities, players cannot damage each other — combat danger comes only from enemies, not other players.
 - **Death/respawn flow:** on permadeath, the corpse is visible to other nearby players but not lootable (for now). The player is sent to a character selection screen, where they can create a new character or pick an existing one from an available character slot — implies accounts support multiple character slots.
 - **Progression persistence:** mastery-tree progress is character-bound (wiped on permadeath, full RotMG-style stakes). Achievements and cosmetics are account-bound (survive death, purely for long-term player retention/pride, no power).
 - **Two-phase plan:** ship a small prototype first to prove the concept and playtest with friends, then a follow-on "1.0" release with fuller MMO scope.
