@@ -29,6 +29,7 @@
   - One dungeon
   - Basic multiplayer — a few friends on the same shared instance (no full MMO server infra/matchmaking/accounts yet), specifically to playtest whether the game is fun with others before investing in full MMO infrastructure
 - **Theme/setting: post-apocalyptic.** Chosen over fantasy specifically for differentiation — fantasy bullet-hell MMOs (RotMG, etc.) are the crowded default; post-apoc bullet-hell combined with class-free MMO progression has no obvious direct competitor. Tradeoff to watch: fewer ready-made post-apoc asset packs exist compared to fantasy.
+- **Art style: stylized low-poly 3D, fixed top-down/isometric camera** (not free-roaming). Fixed camera preserves bullet-hell projectile readability despite being 3D. Low-poly style chosen to lean on asset packs (e.g. Synty Studios, Kenney) given Eduardo has little art skill currently, while still being genuine 3D practice toward his longer-term interest in learning Blender.
 - **Distribution:** eventually release on Steam (not just standalone) — plan to use GodotSteam for Steamworks integration (cloud saves, achievements, lobbies).
 - **Hosting/infra:** dedicated server only, no peer-to-peer. Eduardo has Podman available locally.
   - Game server: Godot headless/server export, containerized (Podman), runs on Eduardo's own machine for the prototype/playtest phase.
