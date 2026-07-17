@@ -19,6 +19,10 @@
 - Eduardo is explicitly not interested in class-locked progression.
 - **Permadeath: confirmed yes.**
 - **Gear system:** gear determines skills and stat bonuses (not raw combat mechanics), giving players build freedom without changing the bullet-hell feel. Plans to add an Albion-style gear mastery tree for long-term progression.
+- **Gear slots (6):** Weapon (active, primary auto-attack), Gadget (active, cooldown-based skill — grenades/EMP/turrets/medkits/traps, post-apoc reskin of RotMG's "ability" slot), Chest (passive), Feet (passive), Head (passive), Weapon Mod (passive).
+- **Rarity system:** gear has rarity tiers; higher rarity = more/stronger buffs on the item.
+- **Combat controls:** twin-stick style (WASD movement + mouse aim), independent of facing/movement direction.
+- **Dodge/evasion:** no dedicated dash/dodge mechanic — pure movement/positioning (RotMG-style), consistent with permadeath stakes.
 - **Progression persistence:** mastery-tree progress is character-bound (wiped on permadeath, full RotMG-style stakes). Achievements and cosmetics are account-bound (survive death, purely for long-term player retention/pride, no power).
 - **Two-phase plan:** ship a small prototype first to prove the concept and playtest with friends, then a follow-on "1.0" release with fuller MMO scope.
 - **Prototype scope (phase 1):**
