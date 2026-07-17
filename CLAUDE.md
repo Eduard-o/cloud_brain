@@ -6,10 +6,10 @@
 - Eduardo. CS degree (College of Charleston), PADI IDC Staff Instructor. Currently unemployed, working on personal projects for fun. Based in Hawaii (HST). See memory/personal/about-me.md and memory/personal/collaboration-style.md.
 
 ## Right now (update this often)
-- [ ] No active project yet — considering a Godot game dev idea to flesh out and turn into a project file.
+- [ ] Fleshing out "Project Gearbound" (placeholder name) — a Godot game idea, bullet-hell MMO combat + class-free gear-based progression. See memory/projects/project-gearbound.md.
 
 ## Active threads
-- Populating cloud_brain memory system for the first time (2026-07-16).
+- Project Gearbound concept discussion (started 2026-07-16).
 
 ## Quick glossary (hot cache — full list in memory/glossary.md)
 | Term | Meaning |
