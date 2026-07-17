@@ -28,6 +28,11 @@
   - One world with a handful of enemies at varying difficulty
   - One dungeon
   - Basic multiplayer — a few friends on the same shared instance (no full MMO server infra/matchmaking/accounts yet), specifically to playtest whether the game is fun with others before investing in full MMO infrastructure
+- **Distribution:** eventually release on Steam (not just standalone) — plan to use GodotSteam for Steamworks integration (cloud saves, achievements, lobbies).
+- **Hosting/infra:** dedicated server only, no peer-to-peer. Eduardo has Podman available locally.
+  - Game server: Godot headless/server export, containerized (Podman), runs on Eduardo's own machine for the prototype/playtest phase.
+  - Character data storage: Postgres, also containerized locally alongside the game server for now — since the game server already ties multiplayer uptime to Eduardo's machine, a local DB adds no new single point of failure and avoids free-tier hosted-DB limits (cold starts, egress caps, connection management).
+  - Considered hosted Postgres (Neon, Supabase — Supabase already available as an MCP connector in this environment) for the DB; concluded hosted makes more sense once the game server itself moves off Eduardo's machine (VPS or full-MMO phase), not before. Migration path is simple either way (plain Postgres, no lock-in — `pg_dump`/restore).
 
 ## Open questions / next steps
 - Real project name/title.
