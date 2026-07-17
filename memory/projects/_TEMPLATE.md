@@ -2,6 +2,7 @@
 
 **Type:** work / personal
 **Status:** active / paused / done
+**Last updated:** YYYY-MM-DD
 
 ## Overview
 - What this is, why it matters
