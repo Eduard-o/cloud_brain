@@ -47,6 +47,7 @@
 ## Open questions / next steps
 - Real project name/title.
 - Phase 2 ("1.0") scope: what full MMO infrastructure/features get added after the prototype proves out?
+- Phase 2 idea — public status website + API: a public site showing game server status (online/down indicator, player count), later expanded into an API for player stat lookups, live server conditions, and a wiki (e.g. enemy drop tables). Explicitly deferred past the prototype. Still needs a decision on how a public site reaches the locally-hosted game server's live state (e.g. a tunnel like Cloudflare Tunnel/ngrok) once revisited.
 
 ## Notes
 - "Gearbound" is a placeholder name, not a final title.
