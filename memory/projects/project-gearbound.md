@@ -28,6 +28,7 @@
   - One world with a handful of enemies at varying difficulty
   - One dungeon
   - Basic multiplayer — a few friends on the same shared instance (no full MMO server infra/matchmaking/accounts yet), specifically to playtest whether the game is fun with others before investing in full MMO infrastructure
+- **Theme/setting: post-apocalyptic.** Chosen over fantasy specifically for differentiation — fantasy bullet-hell MMOs (RotMG, etc.) are the crowded default; post-apoc bullet-hell combined with class-free MMO progression has no obvious direct competitor. Tradeoff to watch: fewer ready-made post-apoc asset packs exist compared to fantasy.
 - **Distribution:** eventually release on Steam (not just standalone) — plan to use GodotSteam for Steamworks integration (cloud saves, achievements, lobbies).
 - **Hosting/infra:** dedicated server only, no peer-to-peer. Eduardo has Podman available locally.
   - Game server: Godot headless/server export, containerized (Podman), runs on Eduardo's own machine for the prototype/playtest phase.
