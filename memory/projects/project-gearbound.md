@@ -43,11 +43,26 @@
   - Basic multiplayer — a few friends on the same shared instance (no full MMO server infra/matchmaking/accounts yet), specifically to playtest whether the game is fun with others before investing in full MMO infrastructure
 - **Theme/setting: post-apocalyptic.** Chosen over fantasy specifically for differentiation — fantasy bullet-hell MMOs (RotMG, etc.) are the crowded default; post-apoc bullet-hell combined with class-free MMO progression has no obvious direct competitor. Tradeoff to watch: fewer ready-made post-apoc asset packs exist compared to fantasy.
 - **Art style: stylized low-poly 3D, fixed top-down/isometric camera** (not free-roaming). Fixed camera preserves bullet-hell projectile readability despite being 3D. Low-poly style chosen to lean on asset packs (e.g. Synty Studios, Kenney) given Eduardo has little art skill currently, while still being genuine 3D practice toward his longer-term interest in learning Blender.
-- **Distribution:** eventually release on Steam (not just standalone) — plan to use GodotSteam for Steamworks integration (cloud saves, achievements, lobbies).
+- **Distribution:** eventually release on Steam (not just standalone) — plan to use GodotSteam for Steamworks integration (cloud saves, achievements, lobbies). Steamworks integration is explicitly deferred out of the prototype build order — friends will receive a build directly rather than through Steam, so there's no need for App ID/store setup/key management until closer to actual release.
 - **Hosting/infra:** dedicated server only, no peer-to-peer. Eduardo has Podman available locally.
   - Game server: Godot headless/server export, containerized (Podman), runs on Eduardo's own machine for the prototype/playtest phase.
   - Character data storage: Postgres, also containerized locally alongside the game server for now — since the game server already ties multiplayer uptime to Eduardo's machine, a local DB adds no new single point of failure and avoids free-tier hosted-DB limits (cold starts, egress caps, connection management).
   - Considered hosted Postgres (Neon, Supabase — Supabase already available as an MCP connector in this environment) for the DB; concluded hosted makes more sense once the game server itself moves off Eduardo's machine (VPS or full-MMO phase), not before. Migration path is simple either way (plain Postgres, no lock-in — `pg_dump`/restore).
+
+## Build order (prototype)
+Riskiest/most novel part (does bullet-hell + gear-builds feel good) built and validated first, before anything harder to change is layered on:
+1. Project setup — new Godot project + its own repo (separate from cloud_brain).
+2. Core movement + fixed camera — twin-stick movement, top-down/isometric camera locked in, placeholder blockout art.
+3. Combat prototype (single-player) — weapon auto-attack, projectiles, hit detection, one basic mutated-creature enemy. Goal: prove the bullet-hell feel before building anything on top of it.
+4. Permadeath + character select loop — still single-player: die → character selection screen → new/existing character.
+5. Gear system — 6 slots, equip logic, gear-driven stats/skills, rarity-scaled bonuses (placeholder items fine).
+6. Mastery tree — per-weapon-type XP + node unlocks.
+7. World + difficulty structure — small world layout, hub city + zone tiers, event boss spawning.
+8. Dungeon system — procedural generation rules, tiered variants.
+9. Multiplayer conversion — client/dedicated-server split (Godot high-level multiplayer API), sync players/enemies/drops, friendly-fire off.
+10. Persistence — Postgres schema (characters, gear, mastery, achievements), Podman containers, server reads/writes on play.
+
+Steamworks/GodotSteam integration is intentionally not in this list — deferred to pre-release (see Distribution note above).
 
 ## Open questions / next steps
 - Real project name/title.
