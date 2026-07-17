@@ -4,8 +4,10 @@ Personal knowledge base / working memory for Claude Code, backed up to GitHub.
 
 ## Structure
 - `CLAUDE.md` — auto-loaded working memory, kept short and current
-- `memory/work/` — work-related context (e.g. luulive.md)
-- `memory/personal/` — personal context (e.g. relocation.md)
+- `memory/work/` — work-related context (roles, companies, colleagues)
+- `memory/personal/` — personal context (self, life, relationships)
+- `memory/projects/` — one file per individual project we work on
+- `memory/glossary.md` — full decoder ring (terms, people, codenames)
 - `memory/decisions.md` — append-only decisions log
 
 ## Usage
