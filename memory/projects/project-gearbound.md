@@ -18,6 +18,7 @@
 - Reference points so far: Realm of the Mad God (bullet-hell, permadeath, retro pixel art, class-based) and Albion Online (class-free, gear-defines-role, economy-heavy).
 - Eduardo is explicitly not interested in class-locked progression.
 - **Permadeath: confirmed yes.**
+- **No character level (for now):** all characters start with identical base stats. Power comes solely from player skill, equipped gear, and mastery-track bonuses — no XP-based leveling layered on top.
 - **Gear system:** gear determines skills and stat bonuses (not raw combat mechanics), giving players build freedom without changing the bullet-hell feel. Plans to add an Albion-style gear mastery tree for long-term progression.
 - **Mastery tree (basic, prototype version):** per-weapon-type mastery track — using a weapon/gadget type earns mastery XP toward that specific type, unlocking a small number of flat nodes (~5-8) with minor passive bonuses (e.g. damage, fire rate, reload) relevant to that type. Linear unlock line, no branching choices yet. Chosen to be small deliberately since it's character-bound and wiped on permadeath — losing a big investment on death would be too punishing for repeated playtest sessions.
 - **Gear slots (6):** Weapon (active, primary auto-attack), Gadget (active, cooldown-based skill — grenades/EMP/turrets/medkits/traps, post-apoc reskin of RotMG's "ability" slot), Chest (passive), Feet (passive), Head (passive), Weapon Mod (passive).
