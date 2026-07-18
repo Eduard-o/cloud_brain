@@ -1,10 +1,10 @@
 # Project Gearbound
 
 **Type:** personal
-**Status:** active (scoped, prototype not yet started)
+**Status:** active (project setup started — step 1 of build order)
 **Last updated:** 2026-07-16
-**Repo:** TBD
-**Local path:** TBD
+**Repo:** not yet on GitHub (local git repo only for now)
+**Local path:** D:/Godot Projects/gearbound
 
 ## Overview
 - Godot game dev idea, still in early concept/discussion phase — not yet scoped or named for real.
