@@ -1,7 +1,7 @@
 # Project Gearbound
 
 **Type:** personal
-**Status:** active (build order steps 1-5 done, plus started on step 7 out of order: procedural terrain generation for the prototype's single world zone. Step 6, mastery tree, still pending)
+**Status:** active (build order steps 1-6 done, plus started on step 7 out of order: procedural terrain generation for the prototype's single world zone, now with obstacle collision. Step 6 (mastery tree) is now also done — see mastery_type on GearItem / MasteryTree component)
 **Last updated:** 2026-07-16
 **Repo:** not yet on GitHub (local git repo only for now)
 **Local path:** D:/Godot Projects/gearbound
@@ -23,7 +23,7 @@
 - **Permadeath: confirmed yes.**
 - **No character level (for now):** all characters start with identical base stats. Power comes solely from player skill, equipped gear, and mastery-track bonuses — no XP-based leveling layered on top.
 - **Gear system:** gear determines skills and stat bonuses (not raw combat mechanics), giving players build freedom without changing the bullet-hell feel. Plans to add an Albion-style gear mastery tree for long-term progression.
-- **Mastery tree (basic, prototype version):** per-weapon-type mastery track — using a weapon/gadget type earns mastery XP toward that specific type, unlocking a small number of flat nodes (~5-8) with minor passive bonuses (e.g. damage, fire rate, reload) relevant to that type. Linear unlock line, no branching choices yet. Chosen to be small deliberately since it's character-bound and wiped on permadeath — losing a big investment on death would be too punishing for repeated playtest sessions.
+- **Mastery tree (basic, prototype version — implemented):** per-weapon-type mastery track. XP is earned **per point of damage dealt** with that weapon type (not per hit or per kill). Mastery bonuses apply **only while that weapon type is currently equipped** — switching weapons means losing that type's bonuses until switched back, encouraging specialization. Weapon types are a placeholder `mastery_type` string tag on `GearItem` (only "Pistol" exists so far, on Scrap Pistol); more types get named as more weapons are added. All types currently share one 5-node XP-threshold curve (basic/shared, not custom per type) — a deliberate simplification until there's a real reason to differentiate curves per weapon type. Linear unlock line, no branching choices yet. Chosen to be small deliberately since it's character-bound and wiped on permadeath — losing a big investment on death would be too punishing for repeated playtest sessions.
 - **Gear slots (6):** Weapon (active, primary auto-attack), Gadget (active, cooldown-based skill — grenades/EMP/turrets/medkits/traps, post-apoc reskin of RotMG's "ability" slot), Chest (passive), Feet (passive), Head (passive), Weapon Mod (passive).
 - **Rarity system:** gear has rarity tiers; higher rarity = more/stronger buffs on the item.
 - **Combat controls:** twin-stick style (WASD movement + mouse aim), independent of facing/movement direction.
