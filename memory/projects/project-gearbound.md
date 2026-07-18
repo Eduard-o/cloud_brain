@@ -10,6 +10,8 @@
 - Godot game dev idea, still in early concept/discussion phase — not yet scoped or named for real.
 - Genre direction: bullet-hell MMO combat (like Realm of the Mad God) combined with open, gear-defined class-free progression (like Albion Online), rather than class-locked progression.
 - Niche being targeted: most bullet-hell games are class-locked, most open-progression MMOs are slower/tab-target combat — combining fast bullet-hell action with open gear-based builds is unusual.
+- **Prior attempt:** `D:/Godot Projects/bullet_hell_mmo` was an earlier attempt at this same idea. It failed — Eduardo went straight for the full complicated version instead of iterating through small prototypes, got discouraged, and lost track of his own codebase. This is the direct reason the current plan is deliberately staged (small scoped prototype first, phase 2 later) — don't skip ahead into full MMO complexity again. Do not reference or reuse that old codebase.
+- Considered Rust + SpacetimeDB (has `godot-rust-spacetimedb`/`godot-rust-stdb` experiments locally) as a multiplayer/persistence stack — explicitly not using it for this project. Sticking with GDScript + Godot's built-in multiplayer API + Postgres/Podman. SpacetimeDB may be reconsidered for a future, separate project.
 
 ## Key people
 - Eduardo (solo, at least for now)
