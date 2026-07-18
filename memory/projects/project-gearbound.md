@@ -1,7 +1,7 @@
 # Project Gearbound
 
 **Type:** personal
-**Status:** active (build order steps 1-4 done: project setup, movement/camera, combat prototype, permadeath/character select loop)
+**Status:** active (build order steps 1-5 done: project setup, movement/camera, combat prototype, permadeath/character select loop, gear system)
 **Last updated:** 2026-07-16
 **Repo:** not yet on GitHub (local git repo only for now)
 **Local path:** D:/Godot Projects/gearbound
