@@ -17,6 +17,7 @@
 - Eduardo (solo, at least for now)
 
 ## Agreements / important facts
+- **Code architecture convention (standing rule):** keep code as decoupled as possible, ECS/component-style. Use signals and components liberally rather than nodes reaching directly into each other's internals. Never hardcode scene path strings (e.g. `change_scene_to_file("res://...")`) — reference scenes via exported `PackedScene` fields instead (Godot tracks these by UID under the hood, so they survive file moves/renames; a raw string literal doesn't). Caveat learned the hard way: don't let gameplay/UI scenes hold direct `PackedScene` references to each other if that creates a load cycle (e.g. world scene embeds player, player references character-select, character-select references world scene back — Godot's resource loader can't resolve that and fails to load). Route cross-scene transitions through a central `SceneRegistry` autoload instead, so no two gameplay/UI scenes reference each other directly.
 - Reference points so far: Realm of the Mad God (bullet-hell, permadeath, retro pixel art, class-based) and Albion Online (class-free, gear-defines-role, economy-heavy).
 - Eduardo is explicitly not interested in class-locked progression.
 - **Permadeath: confirmed yes.**
