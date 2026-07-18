@@ -1,7 +1,7 @@
 # Project Gearbound
 
 **Type:** personal
-**Status:** active (build order steps 1-5 done: project setup, movement/camera, combat prototype, permadeath/character select loop, gear system)
+**Status:** active (build order steps 1-5 done, plus started on step 7 out of order: procedural terrain generation for the prototype's single world zone. Step 6, mastery tree, still pending)
 **Last updated:** 2026-07-16
 **Repo:** not yet on GitHub (local git repo only for now)
 **Local path:** D:/Godot Projects/gearbound
@@ -30,7 +30,8 @@
 - **Dodge/evasion:** no dedicated dash/dodge mechanic — pure movement/positioning (RotMG-style), consistent with permadeath stakes.
 - **Enemy design:** mutated creatures (radiation/mutation-twisted), fitting the post-apoc theme.
 - **Difficulty structure:** zone-based tiers in the open world, with randomly appearing event bosses in mid/high-tier zones. Dungeons are tiered (Tier 1, Tier 2, etc.) rather than difficulty-ramping room-by-room — each tier is **procedurally generated** (rule-based, not a fixed layout), with higher tiers producing more rooms, harder enemies, and better gear drop chances. Traps are a planned future addition to dungeon generation, not in the initial prototype scope.
-- **World structure:** Albion-style hub cities. Difficulty expands outward from cities, with a central high-level city gated behind having to cross the highest-difficulty zone to reach it.
+- **World structure:** Albion-style hub cities. Difficulty expands outward from cities, with a central high-level city gated behind having to cross the highest-difficulty zone to reach it. **Prototype scope note:** this full hub-city/tiered structure is deferred — the prototype just needs the flat test area replaced with one real generated zone.
+- **Open-world terrain is procedurally generated too (not just dungeons), and must be deterministic/seeded** — same seed always reproduces the exact same world, since Eduardo isn't aiming to hand-author art/levels. Terrain style: flat ground + scattered obstacles (debris/rubble as cover), not elevation/heightmap — keeps collision and bullet-hell readability simple with the fixed top-down camera. Enemy spawn placement is intentionally a separate, later step from terrain generation.
 - **Cities are safe zones** (Albion-style) — no combat/PvP allowed in cities.
 - **No player trading system in the prototype.** Players can informally trade by dropping items on the ground for others to pick up — no dedicated trade UI/market/auction house yet.
 - **PvP: friendly-fire safe (for now).** Outside cities, players cannot damage each other — combat danger comes only from enemies, not other players.
