@@ -73,3 +73,4 @@ Steamworks/GodotSteam integration is intentionally not in this list — deferred
 
 ## Notes
 - "Gearbound" is a placeholder name, not a final title.
+- Testing: gdUnit4 addon installed in the Godot project. Global `gdunit4-test-writer` skill (in cloud_brain's `memory/skills/`) is available for writing gdUnit4 tests.

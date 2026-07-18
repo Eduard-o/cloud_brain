@@ -20,7 +20,7 @@
 
 ## Instructions for Claude Code
 - Read this file first every session. Pull in memory/*.md files only when the task touches that topic — don't load everything by default.
-- Where things go: memory/work/ = jobs, companies, colleagues. memory/personal/ = me, my life, relationships. memory/projects/ = one file per individual project, named after the project (e.g. memory/projects/project-name.md). A project can be work-related or personal — it still goes in memory/projects/, not work/ or personal/. Use memory/projects/_TEMPLATE.md as the starting structure for any new project file.
+- Where things go: memory/work/ = jobs, companies, colleagues. memory/personal/ = me, my life, relationships. memory/projects/ = one file per individual project, named after the project (e.g. memory/projects/project-name.md). A project can be work-related or personal — it still goes in memory/projects/, not work/ or personal/. Use memory/projects/_TEMPLATE.md as the starting structure for any new project file. memory/skills/ = Claude Code skills meant to apply globally across projects, not just one project's own .claude/skills/.
 - If a term/person/project isn't in the hot cache above, check memory/glossary.md before asking.
 - When I say "remember this" or share a new fact/decision:
   - Log decisions in memory/decisions.md (append-only, never rewrite past entries)

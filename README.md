@@ -7,6 +7,7 @@ Personal knowledge base / working memory for Claude Code, backed up to GitHub.
 - `memory/work/` — work-related context (roles, companies, colleagues)
 - `memory/personal/` — personal context (self, life, relationships)
 - `memory/projects/` — one file per individual project we work on
+- `memory/skills/` — Claude Code skills meant to be available globally (not scoped to one project's own `.claude/skills/`)
 - `memory/glossary.md` — full decoder ring (terms, people, codenames)
 - `memory/decisions.md` — append-only decisions log
 
