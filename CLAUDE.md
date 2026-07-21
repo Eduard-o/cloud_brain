@@ -7,9 +7,11 @@
 
 ## Right now (update this often)
 - [ ] Fleshing out "Project Gearbound" (placeholder name) — a Godot game idea, bullet-hell MMO combat + class-free gear-based progression. See memory/projects/project-gearbound.md.
+- [ ] Building KaetramDB — unofficial Kaetram item/mob database (Astro + Netlify), v1 scaffolded at D:\Software Projects\kaetramdb, not yet deployed. See memory/projects/project-kaetramdb.md.
 
 ## Active threads
 - Project Gearbound concept discussion (started 2026-07-16).
+- KaetramDB v1 scaffolding (started 2026-07-19).
 
 ## Quick glossary (hot cache — full list in memory/glossary.md)
 | Term | Meaning |
