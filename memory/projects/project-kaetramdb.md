@@ -174,6 +174,67 @@ landed on the same value. The site never declared `color-scheme`. Fixed by addin
 an ad-blocker issue despite first appearances — verified the deployed page's actual DOM/CSS
 in a standard Chromium browser before diagnosing, which ruled out a real build/content bug.
 
+## Mob, boss, and skill icons (added 2026-07-20)
+- Kaetram's API has no mob-icon endpoint, but `testwiki.kaetram.com` (their test wiki)
+  serves mob sprites directly by internal mob key: `/sprites/mobs/{key}.png`. Confirmed
+  this works before building anything (no HTML scraping needed).
+- **Real bug found and fixed**: `testwiki.kaetram.com` is a client-routed SPA that returns
+  HTTP 200 with its HTML shell for *any* unmatched asset path, not a real 404. The first
+  version of the fetch script only checked `res.ok`, so every boss icon request (which
+  404s at the regular mob path) silently got written as an HTML file with a `.png`
+  extension — no crash, no error, just corrupted files sitting in the repo. Root-caused by
+  checking actual response `Content-Type` headers, not status codes. Fix: `fetchBinary()`
+  in `scripts/fetch-kaetram-data.mjs` now validates `Content-Type` starts with `image/`
+  before accepting any download — applies to items, mobs, and skills alike.
+- Bosses live at a **different path**: `/sprites/bosses/{key}.png`, not `/sprites/mobs/`.
+  17 of 22 bosses resolve there; the other 5 (Balonus, Goblin Queen, Corrupted Cupidoid,
+  Corrupted Slime, Evil Pumpkin) genuinely have no sprite published — tried several
+  plausible path variants, all hit the same SPA fallback.
+- Skill icons added from `/skills/{name}.png` (21 of 24; chiseling/smelting/milling
+  unpublished) — wired into the item Requirements panel and crafting recipe skill line via
+  new `SkillIcon.astro`.
+- All genuinely-missing icons (5 bosses, 4 more regular mobs — several flagged
+  `hideCollection: true` in Kaetram's own data, 3 skills) fall back to the existing
+  letter-badge placeholder.
+
+## Market Overview merged into Exchange (added 2026-07-20)
+- Built a market-wide view (top gainers/losers by 24h % change, most-traded by 24h gold
+  volume) as `/market`, then merged it into `/exchange` as the default "browse" state per
+  user request — shown whenever there's no active search/filter and no item selected;
+  selecting an item swaps in the full per-item live view with a "← Back to market overview"
+  link. Old `/market` links 301-redirect to `/exchange` (`netlify.toml`).
+- Same "no bulk endpoint" constraint as the rest of Exchange: market-wide requires polling
+  every item individually, so it can't be live-per-visitor. Solved with a background job:
+  `netlify/functions/refresh-market-data.mts` (background function, up to 15 min) polls all
+  ~1,834 items' current offers, keeps the ~1,169 actively-listed ones, pulls 24h history for
+  those, and writes a snapshot to Netlify Blobs (`market-data` store). A scheduled function
+  (`trigger-market-refresh.mts`, hourly) kicks off the background function over HTTP, since
+  scheduled functions are capped at 30s and can't be background functions themselves — the
+  two-function relay pattern. `market-summary.mts` (plain sync function) serves the cached
+  snapshot to the frontend at `/api/market-summary`.
+
+## Item categorization (added 2026-07-20)
+- First pass: weapon-type-only filter on `/items` (the only per-item category field the API
+  exposes directly), mirroring the Exchange page's weapon filter.
+- Second pass, pursued further: found Kaetram's **public source repo**
+  (github.com/Kaetram/Kaetram-Open — the closed live server is a different, more advanced
+  fork, but this public one shares the same data lineage) and pulled the actual `Equipment`
+  enum from `packages/common/network/modules.ts` (`develop` branch, not `master` — `master`
+  has a different/stale 8-value enum that doesn't match live data at all). Cross-validated
+  the 12-value `develop` enum (0=Helmet, 1=Pendant, 2=Arrows, 3=Chestplate, 4=Weapon,
+  5=Shield, 6=Ring, 7=ArmorSkin, 8=WeaponSkin, 9=Legplates, 10=Cape, 11=Boots) against real
+  item data by sampling names per code — every sample matched (including two non-obvious
+  cases: code 5 "Shield" mixes actual shields with off-hand tools like a fishing rod, and
+  code 10 "Cape" mixes capes with quivers — both consistent with a shared functional slot).
+  `itemCategory()` in `src/lib/kaetram.ts` implements this.
+- Codes 12–15 postdate this public snapshot and aren't in the enum. Per the user's explicit
+  direction: 12 = "Wings", 13–15 = "Cosmetics" (inferred from item-name patterns only —
+  documented in code comments as unsourced, unlike 0–11).
+- Category priority when building `/items`' filter: `weaponType` if present (more specific
+  than the generic "Weapon" slot — e.g. "Sword" instead of just "Weapon"), else the
+  equipmentType slot name, else "Other". 23 categories + Other, all 1,834 items accounted
+  for (verified counts sum exactly).
+
 ## Open questions / next steps
 - v2 candidate: leaderboards (also live/dynamic like Exchange, same "no bulk endpoint"
   constraint that limits Exchange to per-item lookups rather than market-wide views).
